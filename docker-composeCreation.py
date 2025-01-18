@@ -9,6 +9,7 @@ class Menu(tk.Tk):
         self.title("Developer Environment Builder")
         self.VSCodeExtensionCheck = tk.IntVar(self)
         self.VSCodeID = tk.StringVar(self)
+        self.VSCodeExtensionList = []
         self.createWidgets()
 
     def createWidgets(self):
@@ -31,8 +32,8 @@ class Menu(tk.Tk):
             self.VSCodeIDLabel.destroy()
             self.VSCodeIDAdd.destroy()
     def VSCodeIDGet(self):
-        self.VSCodeExtensionList = []
         self.VSCodeExtensionList.append('{}'.format(self.VSCodeID.get()))
+        self.VSCodeIDEntry.delete(0,END)
     def confirmationCreation(self):
         self.confirmationWindow = Toplevel(self)
         self.confirmationWindow.title("Confirmation of Creation")
